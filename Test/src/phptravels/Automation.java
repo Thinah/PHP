@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.interactions.Actions;
 
+//@BeforeTest
 public class Automation {
 	
 	private static final TakesScreenshot driver = null;
@@ -20,25 +21,17 @@ public class Automation {
 		System.setProperty("webriver.chrome.driver", "C:\\Users\\Lulama\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver =new ChromeDriver();
         Actions actions = new Actions(driver);
-
 		driver.manage().window().maximize();
 		driver.get(" https://phptravels.com/demo/");
-	
 		//Scroll to the FAQs heading and take a screenshot.
         ((JavascriptExecutor)driver).executeScript("scroll(0,400)");
         //SCREENSHOT
-        
 		//Hover over “Features” on the navigation and click on the “Newsletter module”.
     	WebElement Newsletter = driver.findElement(By.xpath("/html/body/header/div/nav/div[1]/div/a[7]")); 
-
         actions.moveToElement(Newsletter).perform();
     	WebElement Newsletter1 = driver.findElement(By.xpath("/html/body/header/div/nav/div[1]/div/a[7]")); 
-    	System.out.println("Hover over features");
-		driver.get(null);
-        driver.findElement(By.id("")).click();//click
-
-		
-		driver.findElement(By.id("demouser@travels.com"));
+        WebElement eleEmail=driver.findElement(By.id("address"));
+        eleEmail.sendKeys("demouser@travels.com");
 		//Click the “Subscribe” button and take a screenshot.
         driver.findElement(By.xpath("//*[@id=\"email\"]/button")).click();
     	File file =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -46,10 +39,10 @@ public class Automation {
         driver.findElement(By.xpath("/html/body/header/div/nav/a[4]")).click(); 
         ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         driver.close();
-        //Click on “Pricing” on the navigation and verify that the heading on the page is
-        
-        //ASSERTION “Plans and Prices”.
-        driver.findElement(By.xpath("/html/body/header/div/nav/a[2]")).click(); //click
+        //Click on “Pricing”
+        driver.findElement(By.xpath("/html/body/header/div/nav/a[2]")).click(); //pricing
+        //ASSERTION FOR VALIDATION
+        //Assert.assertEquals("Plans and Prices");
         //Click the button “BUY NOW” on any (random) of the 4 plans displayed.
         driver.findElement(By.xpath("/html/body/header/div/nav/div[1]/span")).click(); //click on features
         driver.findElement(By.xpath("/html/body/header/div/nav/div[1]/div/a[3]")).click();//click on flights
@@ -60,11 +53,13 @@ public class Automation {
         
 
 
-	}
-	public static void Takescreenshot(String fileName)
+	}//@AfterTest
+	public void Takescreenshot(String fileName)
 	{
 	
 	File file =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	
+	
 	}
 
 }
