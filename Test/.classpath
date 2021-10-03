@@ -25,5 +25,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Lulama/Desktop/Ntos Welcome Test/chromedriver_win32.zip"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Lulama/Documents/jcommander-1.78.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lulama/Documents/jquery-3.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lulama/Documents/testng-7.4.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

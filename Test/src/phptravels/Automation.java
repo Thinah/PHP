@@ -1,22 +1,24 @@
 package phptravels;
-//import java.oi.File;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import java.io.File;
 import org.openqa.*;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Test;
 
-//@BeforeTest
+
 public class Automation {
 	
 	private static final TakesScreenshot driver = null;
-	//@Test
+	@Test
 	public static void main(String[]args) {
 		System.setProperty("webriver.chrome.driver", "C:\\Users\\Lulama\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver =new ChromeDriver();
@@ -42,7 +44,7 @@ public class Automation {
         //Click on “Pricing”
         driver.findElement(By.xpath("/html/body/header/div/nav/a[2]")).click(); //pricing
         //ASSERTION FOR VALIDATION
-        //Assert.assertEquals("Plans and Prices");
+        Assert.assertEquals("Plans and Prices", file);
         //Click the button “BUY NOW” on any (random) of the 4 plans displayed.
         driver.findElement(By.xpath("/html/body/header/div/nav/div[1]/span")).click(); //click on features
         driver.findElement(By.xpath("/html/body/header/div/nav/div[1]/div/a[3]")).click();//click on flights
@@ -53,7 +55,7 @@ public class Automation {
         
 
 
-	}//@AfterTest
+	}@AfterTest
 	public void Takescreenshot(String fileName)
 	{
 	
