@@ -15,6 +15,7 @@ import org.openqa.selenium.interactions.Actions;
 public class Automation {
 	
 	private static final TakesScreenshot driver = null;
+	//@Test
 	public static void main(String[]args) {
 		System.setProperty("webriver.chrome.driver", "C:\\Users\\Lulama\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver =new ChromeDriver();
@@ -45,7 +46,9 @@ public class Automation {
         driver.findElement(By.xpath("/html/body/header/div/nav/a[4]")).click(); 
         ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         driver.close();
-        //Click on “Pricing” on the navigation and verify that the heading on the page is “Plans and Prices”.
+        //Click on “Pricing” on the navigation and verify that the heading on the page is
+        
+        //ASSERTION “Plans and Prices”.
         driver.findElement(By.xpath("/html/body/header/div/nav/a[2]")).click(); //click
         //Click the button “BUY NOW” on any (random) of the 4 plans displayed.
         driver.findElement(By.xpath("/html/body/header/div/nav/div[1]/span")).click(); //click on features
