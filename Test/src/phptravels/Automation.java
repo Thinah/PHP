@@ -1,5 +1,4 @@
 package phptravels;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -19,7 +18,8 @@ public class Automation {
 	
 	private static final TakesScreenshot driver = null;
 	@Test
-	public static void main(String[]args) {
+	public static void main(String[]args) 
+	{
 		System.setProperty("webriver.chrome.driver", "C:\\Users\\Lulama\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver =new ChromeDriver();
         Actions actions = new Actions(driver);
@@ -55,13 +55,6 @@ public class Automation {
         
 
 
-	}@AfterTest
-	public void Takescreenshot(String fileName)
-	{
-	
-	File file =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	
-	
 	}
 
 }
