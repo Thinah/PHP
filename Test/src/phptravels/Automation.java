@@ -18,7 +18,7 @@ public class Automation {
 	
 	private static final TakesScreenshot driver = null;
 	@Test
-	public static void main(String[]args) 
+	public void PHP()
 	{
 		System.setProperty("webriver.chrome.driver", "C:\\Users\\Lulama\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver =new ChromeDriver();
